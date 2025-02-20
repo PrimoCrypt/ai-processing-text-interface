@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+
+
 
 export async function detectLanguage(text: string): Promise<string | undefined> {
 	const languageDetectorCapabilities = await self.ai.languageDetector.capabilities();
@@ -14,8 +17,8 @@ export async function detectLanguage(text: string): Promise<string | undefined> 
 	} else {
 		// The language detector can be used after model download.
 		detector = await self.ai.languageDetector.create({
-			monitor(m) {
-				m.addEventListener("downloadprogress", (e) => {
+			monitor(m: any) {
+				m.addEventListener("downloadprogress", (e: any) => {
 					console.log(`Downloaded ${e.loaded} of ${e.total} bytes.`);
 				});
 			},
@@ -64,12 +67,13 @@ export async function translateText(
 		translator = await self.ai.translator.create({
 			sourceLanguage,
 			targetLanguage,
-			monitor(m) {
-				m.addEventListener("downloadprogress", (e) => {
+
+			monitor(m: any) {
+				m.addEventListener("downloadprogress", (e: any) => {
 					console.log(`Downloaded ${e.loaded} of ${e.total} bytes.`);
+
 				});
-			},
-		});
+			},		});
 		await translator.ready;
 	}
 	try {
@@ -102,7 +106,7 @@ export async function summarizeText(text: string): Promise<string | undefined> {
 	} else {
 		// The Summarizer API can be used after the model is downloaded.
 		summarizer = await self.ai.summarizer.create(options);
-		summarizer.addEventListener("downloadprogress", (e) => {
+		summarizer.addEventListener("downloadprogress", (e: any) => {
 			console.log(e.loaded, e.total);
 		});
 		await summarizer.ready;
