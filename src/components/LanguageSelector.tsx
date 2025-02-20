@@ -14,7 +14,7 @@ interface LanguageSelectorProps {
   
   export default function LanguageSelector({ selectedLanguage, onSelectLanguage }: LanguageSelectorProps) {
     return (
-      <div className="p-4 border-t border-gray-700 bg-gray-850">
+      <div className="p-1.5 border-gray-700 bg-gray-850">
         <select
           value={selectedLanguage}
           onChange={(e) => onSelectLanguage(e.target.value)}

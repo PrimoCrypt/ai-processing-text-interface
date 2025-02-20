@@ -31,6 +31,8 @@ export async function detectLanguage(text: string): Promise<string | undefined> 
 		throw error;
 	}
 }
+
+
 export async function translateText(
 	text: string,
 	sourceLanguage: string,
@@ -79,6 +81,7 @@ export async function translateText(
 		throw error;
 	}
 }
+
 
 export async function summarizeText(text: string): Promise<string | undefined> {
   let length = "medium"
