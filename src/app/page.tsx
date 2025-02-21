@@ -81,7 +81,7 @@ export default function Home() {
 
 	return (
 		<div className=" min-h-screen bg-gray-900 text-white flex items-center justify-center">
-			<div className="max-w-3xl pt-16 relative w-full bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-700">
+			<div className="max-w-3xl max-sm:pt-20 pt-16 relative w-full bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-700">
 				<ChatInterface
 					messages={messages}
 					loading={loading}
@@ -89,7 +89,7 @@ export default function Home() {
 					onSummarize={handleSummarize}
 					onTranslate={handleTranslate}
 				/>
-				<div className=" top-0 px-2 py-2 pl-4 w-full absolute flex  items-center justify-between bg-gray-850">
+				<div className=" top-0 px-2 py-2 pl-4 w-full absolute flex max-sm:flex-col  items-center justify-between bg-gray-850">
 					<div className="text-2xl font-semibold">Leo&apos;s AI Text Processing Bot ✨</div>
 					<LanguageSelector selectedLanguage={selectedLanguage} onSelectLanguage={setSelectedLanguage} />
 				</div>
