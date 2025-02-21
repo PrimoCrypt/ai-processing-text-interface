@@ -67,11 +67,9 @@ export async function translateText(
 		translator = await self.ai.translator.create({
 			sourceLanguage,
 			targetLanguage,
-
 			monitor(m: any) {
 				m.addEventListener("downloadprogress", (e: any) => {
 					console.log(`Downloaded ${e.loaded} of ${e.total} bytes.`);
-
 				});
 			},		});
 		await translator.ready;

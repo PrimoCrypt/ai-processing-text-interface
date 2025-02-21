@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {  useState } from "react";
 import ChatInterface from "@/components/ChatInterface";
 import LanguageSelector from "@/components/LanguageSelector";
 import { detectLanguage, summarizeText, translateText } from "@/utils/aiUtils";
@@ -20,6 +20,8 @@ export default function Home() {
 	>([]);
 	const [selectedLanguage, setSelectedLanguage] = useState("en");
 	const [loading, setLoading] = useState<boolean>(false);
+
+
 
 	const handleSendMessage = async (text: string) => {
 		setMessages((prev) => [...prev, { text, isUser: true }]);
