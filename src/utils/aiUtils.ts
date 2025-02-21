@@ -25,9 +25,10 @@ export async function detectLanguage(text: string): Promise<string | undefined> 
 		});
 		await detector.ready;
 	}
+
+
 	try {
 		const response = await await detector.detect(text);
-		console.log("Response:", response);
 		return response[0].detectedLanguage;
 	} catch (error) {
 		console.error("Error detecting language:", error);
@@ -74,9 +75,10 @@ export async function translateText(
 			},		});
 		await translator.ready;
 	}
+
+	
 	try {
 		const response = await translator.translate(text);
-		console.log({ response, targetLanguage });
 		return response;
 	} catch (error) {
 		console.error("Error translating text:", error);
