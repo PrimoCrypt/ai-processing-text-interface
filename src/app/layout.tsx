@@ -22,9 +22,9 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const langDetectorToken = process.env.NEXT_PUBLIC_LANGUAGE_DETECTOR_API_ORIGIN_KEY;
-    const translationToken = process.env.NEXT_PUBLIC_TRANSLATOR_API_ORIGIN_KEY;
-    const summarizerToken = process.env.NEXT_PUBLIC_SUMMARIZER_API_ORIGIN_KEY;
+    const langDetectorToken = process.env.LANGUAGE_DETECTOR_API_ORIGIN_KEY;
+    const translationToken = process.env.TRANSLATOR_API_ORIGIN_KEY;
+    const summarizerToken = process.env.SUMMARIZER_API_ORIGIN_KEY;
 
     return (
         <html lang="en">
